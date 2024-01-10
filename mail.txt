@@ -1,0 +1,6 @@
+sendmail -v user1@postfix-recipient <<EOF
+Subject: Test Mail
+From: sender@postfix-sender
+To: user1@postfix-recipient
+This is a test mail.
+EOF

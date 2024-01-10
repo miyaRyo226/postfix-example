@@ -1,0 +1,18 @@
+services:
+  postfix-sender:
+    build:
+      context: .
+      dockerfile: sender/Dockerfile
+    container_name: postfix-sender
+    volumes:
+      - ./sender/main.cf:/etc/postfix/main.cf
+
+  postfix-recipient:
+    build:
+      context: .
+      dockerfile: recipient/Dockerfile
+    container_name: postfix-recipient
+    volumes:
+      - ./recipient/main.cf:/etc/postfix/main.cf
+
+
